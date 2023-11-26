@@ -10,7 +10,7 @@ vim.keymap.set({"n", "v"}, "<C-S>", ":write<CR>", { noremap = true, silent = tru
 vim.keymap.set("i", "<C-S>", "<esc>:write<CR>", { noremap = true, silent = true})
 
 --map leader+y to copy to system clipboard in normal, visual and select modes
-vim.keymap.set({"n", "v"}, "<Leader>y", '"+y', { noremap = true, silent = false, desc="a" })
+vim.keymap.set({"n", "v"}, "<Leader>y", '"+y', { noremap = true, silent = false })
 
 
 -- map Ctrl+L to move the cursor to the right split
@@ -27,3 +27,13 @@ vim.keymap.set("n", "<S-H>", "<cmd>tabp<CR>", { noremap = true, silent = true})
 
 -- map Ctrl+C to close the current window
 vim.keymap.set("n", "<C-C>", "<cmd>close<CR>", { noremap = true, silent = true})
+
+--
+-- Explorer
+-- 
+
+-- map leader+nf to toggle the Explorer and auto find and focus current file when it opens
+vim.keymap.set("n", "<Leader>nf", "<cmd>Neotree toggle reveal<CR>", { noremap = true, silent = true })
+
+-- map leader+nc to close the Explorer
+vim.keymap.set("n", "<Leader>nc", "<cmd>Neotree close<CR>", { noremap = true, silent = true })
