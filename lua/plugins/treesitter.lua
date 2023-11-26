@@ -1,4 +1,5 @@
 return {
+  {"RRethy/nvim-treesitter-endwise"},
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -8,7 +9,8 @@ return {
         auto_install = true,
         highlight = {
           enable = true
-        }
+        },
+        endwise = { enable = true },
       }
     end
   },
