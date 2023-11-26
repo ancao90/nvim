@@ -13,3 +13,4 @@ vim.g['test#strategy'] = 'neovim'
 
 vim.opt.cursorline = true -- Highlight the text line of the cursor
 vim.opt.cursorlineopt = "line,number"
+
