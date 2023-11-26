@@ -7,3 +7,5 @@ vim.opt.expandtab = true -- In Insert mode: Use the appropriate number of space 
 
 vim.opt.splitright = true -- Splitting a window will put the new window right of the current one.
 vim.opt.splitbelow = true -- Splitting a window will put the new window below the current one.
+
+vim.g['test#strategy'] = 'neovim'

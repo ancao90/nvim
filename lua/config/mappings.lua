@@ -56,3 +56,10 @@ vim.keymap.set("n", "<Leader>s", "<cmd>lua require('fzf-lua').live_grep({ fzf_op
 -- map leader+j to toggle split and join
 vim.keymap.set("n", "<Leader>j", "<cmd>lua require('treesj').toggle()<CR>", { noremap = true, silent = true })
 
+
+--
+-- Test
+--
+vim.keymap.set("n", "<Leader>tt", "<cmd>TestNearest<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>tf", "<cmd>TestFile<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>tl", "<cmd>TestLast<CR>", { noremap = true, silent = true })
