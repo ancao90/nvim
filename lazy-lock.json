@@ -1,5 +1,6 @@
 {
   "LuaSnip": { "branch": "master", "commit": "df58ee1664cfda71479cd2bbd56114f56599eba6" },
+  "autoclose.nvim": { "branch": "main", "commit": "37e11589aac55b0e8810dc5865f898f9cb36fef6" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
   "fzf": { "branch": "master", "commit": "6b99399c41d9818ee4b4fa8968a1249100008e4c" },
   "fzf-lua": { "branch": "main", "commit": "08a63827636b3169d60d14e458c98e758a77e937" },
