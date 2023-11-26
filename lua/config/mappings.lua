@@ -31,6 +31,9 @@ vim.keymap.set("n", "<C-C>", "<cmd>close<CR>", { noremap = true, silent = true})
 -- map Ctrl+Q to quit the current window
 vim.keymap.set("n", "<C-Q>", "<cmd>quit<CR>", { noremap = true, silent = true})
 
+-- map leader+h to hide search highlight
+vim.keymap.set("n", "<Leader>h", "<cmd>noh<CR>", { noremap = true, silent = true})
+
 --
 -- Explorer
 -- 
