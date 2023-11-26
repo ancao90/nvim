@@ -10,3 +10,6 @@ vim.opt.splitright = true -- Splitting a window will put the new window right of
 vim.opt.splitbelow = true -- Splitting a window will put the new window below the current one.
 
 vim.g['test#strategy'] = 'neovim'
+
+vim.opt.cursorline = true -- Highlight the text line of the cursor
+vim.opt.cursorlineopt = "line,number"
