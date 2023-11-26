@@ -28,6 +28,9 @@ vim.keymap.set("n", "<S-H>", "<cmd>tabp<CR>", { noremap = true, silent = true})
 -- map Ctrl+C to close the current window
 vim.keymap.set("n", "<C-C>", "<cmd>close<CR>", { noremap = true, silent = true})
 
+-- map Ctrl+Q to quit the current window
+vim.keymap.set("n", "<C-Q>", "<cmd>quit<CR>", { noremap = true, silent = true})
+
 --
 -- Explorer
 -- 
