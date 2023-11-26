@@ -1,5 +1,6 @@
 vim.opt.number = true -- Precede each line with its line number
 vim.opt.relativenumber = true -- Show the line number relative to the line with the cursor in front of each line.
+vim.opt.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor
 
 vim.opt.shiftwidth = 0 -- Number of spaces to use for each step of (auto)indent. When zero the 'tabstop' value will be used.
 vim.opt.tabstop = 2 -- Number of spaces that a <Tab> in the file counts for.
