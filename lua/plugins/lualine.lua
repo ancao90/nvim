@@ -1,5 +1,4 @@
 return {
-  { 'arkav/lualine-lsp-progress' },
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
