@@ -11,6 +11,7 @@ return {
           enable = true
         },
         endwise = { enable = true },
+        indent = { enable = true }
       }
     end
   },
