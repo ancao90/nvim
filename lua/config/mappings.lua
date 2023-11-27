@@ -19,6 +19,13 @@ vim.keymap.set("n", "<C-L>", "<C-W>l", { noremap = true, silent = true})
 -- map Ctrl+H to move the cursor to the left split
 vim.keymap.set("n", "<C-H>", "<C-W>h", { noremap = true, silent = true})
 
+
+-- map Ctrl+K to move the cursor to the above split
+vim.keymap.set("n", "<C-K>", "<C-W>k", { noremap = true, silent = true})
+
+-- map Ctrl+J to move the cursor to the below split
+vim.keymap.set("n", "<C-J>", "<C-W>j", { noremap = true, silent = true})
+
 -- map Shift+L to move the cursor to the right tab
 vim.keymap.set("n", "<S-L>", "<cmd>tabn<CR>", { noremap = true, silent = true})
 
