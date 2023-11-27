@@ -50,6 +50,12 @@ vim.keymap.set("n", "<leader>tr", "0df{<esc>f}x==")
 -- map leader+f to format file
 vim.keymap.set("n", "<Leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
 
+-- map Ctrl+Shift+k to increase size of the window
+vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<CR>", { noremap = true, silent = true })
+--
+-- map Ctrl+Shift+j to decrease size of the window
+vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<CR>", { noremap = true, silent = true })
+
 --
 -- Explorer
 -- 
