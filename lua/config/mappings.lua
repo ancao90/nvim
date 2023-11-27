@@ -34,6 +34,12 @@ vim.keymap.set("n", "<C-Q>", "<cmd>quit<CR>", { noremap = true, silent = true})
 -- map leader+h to hide search highlight
 vim.keymap.set("n", "<Leader>h", "<cmd>noh<CR>", { noremap = true, silent = true})
 
+-- map leader+te to change one-liner let rspec to variable
+vim.keymap.set("n", "<leader>te", "0wdf:wxa= <esc>wdwf}x")
+
+-- map leader+tr to change one-liner let rspec to removing let
+vim.keymap.set("n", "<leader>tr", "0df{<esc>f}x==")
+
 --
 -- Explorer
 -- 
