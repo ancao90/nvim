@@ -15,3 +15,8 @@ vim.opt.cursorline = true -- Highlight the text line of the cursor
 vim.opt.cursorlineopt = "line,number"
 
 vim.opt.colorcolumn = '80,120'
+
+vim.g['vim_markdown_conceal'] = 2
+vim.cmd[[hi VimwikiHeader1 guifg=#ffaf5f]]
+vim.cmd[[hi VimwikiHeader2 guifg=#87af5f]]
+
