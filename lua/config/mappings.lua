@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 -- map leader+w to save current file in normal mode
-vim.keymap.set("n", "<Leader>w", ":write<CR>", { noremap = true, silent = true}) 
+vim.keymap.set("n", "<Leader>w", ":HopWord<CR>", { noremap = true, silent = true}) 
 
 -- map Ctrl+S to save current file in normal mode and visual and select modes
 vim.keymap.set({"n", "v"}, "<C-S>", ":write<CR>", { noremap = true, silent = true })
