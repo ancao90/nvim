@@ -1,9 +1,8 @@
 return {
   'Wansmer/treesj',
+  lazy = true,
   dependencies = { 'nvim-treesitter/nvim-treesitter' },
-  config = function()
-    require('treesj').setup({
-      max_join_length = 240
-    })
-  end
+  opts = {
+    use_default_keymaps = false,
+  }
 }
