@@ -56,16 +56,6 @@ vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<CR>", { noremap = true, silent = 
 -- map Ctrl+Shift+j to decrease size of the window
 vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<CR>", { noremap = true, silent = true })
 
---
--- Explorer
--- 
-
--- map leader+nf to toggle the Explorer and auto find and focus current file when it opens
-vim.keymap.set("n", "<Leader>nf", "<cmd>Neotree toggle reveal<CR>", { noremap = true, silent = true })
-
--- map leader+nc to close the Explorer
-vim.keymap.set("n", "<Leader>nc", "<cmd>Neotree close<CR>", { noremap = true, silent = true })
-
 
 --
 -- Fzf
