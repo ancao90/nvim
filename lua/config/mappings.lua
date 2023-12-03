@@ -45,7 +45,7 @@ vim.keymap.set("n", "<Leader>h", "<cmd>noh<CR>", { noremap = true, silent = true
 vim.keymap.set("n", "<leader>te", "0wdf:wxa= <esc>wdwf}x")
 
 -- map leader+tr to change one-liner let rspec to removing let
-vim.keymap.set("n", "<leader>tr", "0df{<esc>f}x==")
+vim.keymap.set("n", "<leader>tr", "0df{<esc>f}x^==")
 
 -- map leader+f to format file
 vim.keymap.set("n", "<Leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
