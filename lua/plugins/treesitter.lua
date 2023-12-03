@@ -1,4 +1,5 @@
 return {
+  { 'andymass/vim-matchup' },
   {"RRethy/nvim-treesitter-endwise"},
   {
     "nvim-treesitter/nvim-treesitter",
@@ -11,7 +12,11 @@ return {
           enable = true
         },
         endwise = { enable = true },
-        indent = { enable = true }
+        indent = { enable = true },
+        matchup = {
+          enable = true,              -- mandatory, false will disable the whole extension
+          -- [options]
+        },
       }
     end
   },
