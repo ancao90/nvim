@@ -84,4 +84,4 @@ vim.keymap.set("n", "<Leader>tf", "<cmd>TestFile<CR>", { noremap = true, silent 
 vim.keymap.set("n", "<Leader>tl", "<cmd>TestLast<CR>", { noremap = true, silent = true })
 
 -- map leader+lr to restart lsp
-vim.keymap.set("n", "<Leader>lr", "<cmd>LspRestart<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>lr", "<cmd>LspRestart<CR>:echo 'Lsp reloaded!'<CR>", { noremap = true, silent = true })
