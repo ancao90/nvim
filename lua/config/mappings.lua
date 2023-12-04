@@ -92,3 +92,6 @@ vim.keymap.set("n", "<Leader>tl", "<cmd>TestLast<CR>", { noremap = true, silent 
 
 -- map leader+lr to restart lsp
 vim.keymap.set("n", "<Leader>lr", "<cmd>LspRestart<CR>:echo 'Lsp reloaded!'<CR>", { noremap = true, silent = true })
+
+-- request http url at the cursor
+vim.keymap.set("n", "<Leader>r", "<cmd>lua require('rest-nvim').run()<CR>")
