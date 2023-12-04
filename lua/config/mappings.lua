@@ -64,8 +64,12 @@ vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<CR>", { noremap = true, silent = 
 -- map Ctrl+P to find files
 vim.keymap.set("n", "<C-P>", "<cmd>lua require('fzf-lua').files({ fzf_opts = {['--layout'] = 'default'} })<CR>", { noremap = true, silent = true })
 
--- map Ctrl+G to find git branches
-vim.keymap.set("n", "<C-G>", "<cmd>lua require('fzf-lua').git_branches()<CR>", { noremap = true, silent = true })
+-- Find git branches
+vim.keymap.set("n", "<C-G>b", "<cmd>lua require('fzf-lua').git_branches()<CR>", { noremap = true, silent = true })
+-- Find git stashes
+vim.keymap.set("n", "<C-G>s", "<cmd>lua require('fzf-lua').git_stash()<CR>", { noremap = true, silent = true })
+-- View git status
+vim.keymap.set("n", "<C-G>t", "<cmd>lua require('fzf-lua').git_status()<CR>", { noremap = true, silent = true })
 
 -- map leader+s to search files
 vim.keymap.set("n", "<Leader>s", "<cmd>lua require('fzf-lua').grep_cword({ fzf_opts = {['--layout'] = 'default'} })<CR>", { noremap = true, silent = true })
