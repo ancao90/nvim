@@ -72,7 +72,7 @@ vim.keymap.set("n", "<C-G>s", "<cmd>lua require('fzf-lua').git_stash()<CR>", { n
 vim.keymap.set("n", "<C-G>t", "<cmd>lua require('fzf-lua').git_status()<CR>", { noremap = true, silent = true })
 
 -- map leader+s to search files
-vim.keymap.set("n", "<Leader>s", "<cmd>lua require('fzf-lua').grep_cword({ fzf_opts = {['--layout'] = 'default'} })<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>s", "<cmd>lua require('fzf-lua').live_grep({ fzf_opts = {['--layout'] = 'default'} })<CR>", { noremap = true, silent = true })
 vim.keymap.set("v", "<Leader>s", "<cmd>lua require('fzf-lua').grep_visual({ fzf_opts = {['--layout'] = 'default'} })<CR>", { noremap = true, silent = true })
 
 
