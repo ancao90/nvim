@@ -15,6 +15,12 @@ return {
     luasnip.add_snippets("gitcommit", {
       luasnip.snippet("fixRSpecLetSetup", { luasnip.text_node("Fix rubocop offenses RSpec/LetSetup in ") })
     })
+    luasnip.add_snippets("gitcommit", {
+      luasnip.snippet("fixRSpecLeakyConstantDeclaration", { luasnip.text_node("Fix rubocop offenses RSpec/LeakyConstantDeclaration in ") })
+    })
+    luasnip.add_snippets("gitcommit", {
+      luasnip.snippet("fixRubocopOffense", { luasnip.text_node("Fix rubocop offenses RSpec/LeakyConstantDeclaration in ") })
+    })
 
     require("luasnip.loaders.from_vscode").lazy_load()
 
