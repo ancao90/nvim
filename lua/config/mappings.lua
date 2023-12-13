@@ -95,3 +95,6 @@ vim.keymap.set("n", "<Leader>lr", "<cmd>LspRestart<CR>:echo 'Lsp reloaded!'<CR>"
 
 -- request http url at the cursor
 vim.keymap.set("n", "<Leader>r", "<cmd>lua require('rest-nvim').run()<CR>")
+
+-- open git
+vim.keymap.set("n", "<C-G>", "<cmd>Git<CR>", { noremap = true, silent = true })
