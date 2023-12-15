@@ -70,6 +70,8 @@ vim.keymap.set("n", "<C-G>b", "<cmd>lua require('fzf-lua').git_branches()<CR>", 
 vim.keymap.set("n", "<C-G>s", "<cmd>lua require('fzf-lua').git_stash()<CR>", { noremap = true, silent = true })
 -- View git status
 vim.keymap.set("n", "<C-G>t", "<cmd>lua require('fzf-lua').git_status()<CR>", { noremap = true, silent = true })
+-- View git commits
+vim.keymap.set("n", "<Leader>gc", "<cmd>lua require('fzf-lua').git_commits()<CR>", { noremap = true, silent = true })
 
 -- map leader+s to search files
 vim.keymap.set("n", "<Leader>s", "<cmd>lua require('fzf-lua').live_grep({ fzf_opts = {['--layout'] = 'default'} })<CR>", { noremap = true, silent = true })
