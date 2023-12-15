@@ -10,7 +10,6 @@ return {
     mason_lspconfig.setup({
       ensure_installed = {
         "lua_ls",
-        "solargraph",
         "ruby_ls",
         "rubocop",
       },
