@@ -75,7 +75,7 @@ vim.keymap.set("n", "<Leader>gt", "<cmd>lua require('fzf-lua').git_status()<CR>"
 vim.keymap.set("n", "<Leader>gc", "<cmd>lua require('fzf-lua').git_commits()<CR>", { noremap = true, silent = true })
 
 -- Git push
-vim.keymap.set("n", "<Leader>gp", "<cmd>Git push<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>gp", "<cmd>echo 'Pushing code...' | Git push<CR>", { noremap = true, silent = true })
 
 -- map leader+s to search files
 vim.keymap.set("n", "<Leader>s", "<cmd>lua require('fzf-lua').live_grep({ fzf_opts = {['--layout'] = 'default'} })<CR>",
