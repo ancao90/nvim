@@ -109,3 +109,6 @@ vim.keymap.set("n", "<C-G>", "<cmd>Git<CR>", { noremap = true, silent = true })
 
 -- fixing rubocop offenses: transform let! to before
 vim.keymap.set("n", "<leader>b", "0wcWbefore<ESC><cmd>:w<CR>")
+
+-- exit terminal mode when run test
+vim.keymap.set("t", "<C-o>", "<C-\\><C-n>")
