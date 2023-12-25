@@ -97,6 +97,7 @@ vim.keymap.set("n", "<Leader>j", "<cmd>lua require('treesj').toggle()<CR>", { no
 -- Test
 --
 vim.keymap.set("n", "<Leader>tt", "<cmd>TestNearest<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>ty", "<cmd>TestNearest -strategy=basic<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>tf", "<cmd>TestFile<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>tl", "<cmd>TestLast<CR>", { noremap = true, silent = true })
 
