@@ -10,6 +10,11 @@ return {
       local mm = require "mm"
       -- calling `setup` is optional for customization
       require("fzf-lua").setup({
+        files = {
+          actions = {
+            ["default"] = actions.file_edit,
+          }
+        },
         git = {
           branches = {
             actions  = {
