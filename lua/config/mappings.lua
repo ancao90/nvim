@@ -17,6 +17,9 @@ vim.keymap.set('n', '<Leader>gc', function() require 'fzf-lua'.git_commits() end
 vim.keymap.set('n', '<Leader>gt', function() require 'fzf-lua'.git_stash() end, { desc = 'Git stash' })
 vim.keymap.set('n', '<Leader>gp', '<cmd>!git push<CR>', { desc = 'Git push' })
 vim.keymap.set('n', '<Leader>gs', '<cmd>tab Git<CR>', { desc = 'Git summary' })
+-- Git commit incrementally
+-- If latest commit is a wip, then commit with amend. Otherwise create new wip commit
+vim.keymap.set("n", "<leader>gw", "<cmd>lua require('mm').CommitIncrementally()<CR>")
 
 vim.keymap.set('n', '<Leader>se', function() require 'fzf-lua'.live_grep() end, { desc = 'Simple search' })
 vim.keymap.set('v', '<Leader>se', function() require 'fzf-lua'.grep_visual() end, { desc = 'Simple search' })
