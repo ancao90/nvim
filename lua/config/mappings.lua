@@ -1,3 +1,26 @@
+local function map(desc, mode, lhs, rhs)
+  local opts = {}
+
+  if (opts.noremap == nil) then
+    opts.noremap = true
+  end
+
+  if (opts.silent == nil) then
+    opts.silent = true
+  end
+
+  opts.desc = desc
+  vim.keymap.set(mode, lhs, rhs, opts)
+end
+
+local function normalMap(opts)
+  map(opts.desc, "n", opts.keys, opts.action)
+end
+
+local function visualMap(opts)
+  map(opts.desc, "v", opts.keys, opts.action)
+end
+
 vim.g.mapleader = " "
 
 -- map leader+w to save current file in normal mode
@@ -79,12 +102,37 @@ vim.keymap.set("n", "<Leader>gc", "<cmd>lua require('fzf-lua').git_commits()<CR>
 -- Git push
 vim.keymap.set("n", "<Leader>gp", "<cmd>echo 'Pushing code...' | Git push<CR>", { noremap = true, silent = true })
 
--- map leader+s to search files
-vim.keymap.set("n", "<Leader>s", "<cmd>lua require('fzf-lua').live_grep({ fzf_opts = {['--layout'] = 'default'} })<CR>",
-  { noremap = true, silent = true })
-vim.keymap.set("v", "<Leader>s", "<cmd>lua require('fzf-lua').grep_visual({ fzf_opts = {['--layout'] = 'default'} })<CR>",
-  { noremap = true, silent = true })
+normalMap({
+  desc = "Simple search",
+  keys = "<Leader>se",
+  action = function()
+    require('fzf-lua').live_grep({ fzf_opts = { ['--layout'] = 'default' } })
+  end
+})
 
+visualMap({
+  desc = "Simple search",
+  keys = "<Leader>se",
+  action = function()
+    require('fzf-lua').grep_visual({ fzf_opts = { ['--layout'] = 'default' } })
+  end
+})
+
+normalMap({
+  desc = "Search Ruby class or module definition",
+  keys = "<Leader>sc",
+  action = function()
+    require 'mm'.SearchRubyClassOrModule(vim.fn.expand("<cword>"))
+  end
+})
+
+visualMap({
+  desc = "Search Ruby class or module definition",
+  keys = "<Leader>sc",
+  action = function()
+    require 'mm'.SearchRubyClassOrModule(require 'fzf-lua.utils'.get_visual_selection())
+  end
+})
 
 --
 -- TreeSJ
