@@ -8,7 +8,6 @@ return {
       { '<C-p>',      function() require 'fzf-lua'.files() end,        desc = 'Find Files' },
       { '<Leader>gb', function() require 'fzf-lua'.git_branches() end, desc = 'Git Branches' },
       { '<Leader>gc', function() require 'fzf-lua'.git_commits() end,  desc = 'Git Commits' },
-      { '<Leader>gs', function() require 'fzf-lua'.git_status() end,   desc = 'Git Status' },
       { '<Leader>gt', function() require 'fzf-lua'.git_stash() end,    desc = 'Git Stash' },
       { '<Leader>se', function() require 'fzf-lua'.live_grep() end,    desc = 'Simple search' },
       { '<Leader>se', function() require 'fzf-lua'.grep_visual() end,  desc = 'Simple search', mode = 'v', },

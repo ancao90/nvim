@@ -59,6 +59,7 @@ vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<CR>", { noremap = true, silent = 
 vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<Leader>gp", "<cmd>!git push<CR>", { desc = "Git push"})
+vim.api.nvim_set_keymap("n", "<Leader>gs", "<cmd>tab Git<CR>", { desc = "Git summary"})
 
 --
 -- TreeSJ
@@ -80,9 +81,6 @@ vim.keymap.set("n", "<Leader>lr", "<cmd>LspRestart<CR>:echo 'Lsp reloaded!'<CR>"
 
 -- request http url at the cursor
 vim.keymap.set("n", "<Leader>r", "<cmd>lua require('rest-nvim').run()<CR>")
-
--- open git
-vim.keymap.set("n", "<C-G>", "<cmd>Git<CR>", { noremap = true, silent = true })
 
 -- fixing rubocop offenses: transform let! to before
 vim.keymap.set("n", "<leader>b", "0wcWbefore<ESC><cmd>:w<CR>")
