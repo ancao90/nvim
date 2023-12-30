@@ -52,12 +52,6 @@ vim.keymap.set('n', '<Leader>f', function()
   vim.lsp.buf.format { async = true }
 end, { noremap = true, silent = true })
 
--- map Ctrl+Shift+k to increase size of the window
-vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<CR>", { noremap = true, silent = true })
---
--- map Ctrl+Shift+j to decrease size of the window
-vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<CR>", { noremap = true, silent = true })
-
 vim.api.nvim_set_keymap("n", "<Leader>gp", "<cmd>!git push<CR>", { desc = "Git push" })
 vim.api.nvim_set_keymap("n", "<Leader>gs", "<cmd>tab Git<CR>", { desc = "Git summary" })
 
