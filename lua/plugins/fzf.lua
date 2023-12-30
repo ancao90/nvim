@@ -5,11 +5,34 @@ return {
     -- optional for icon support
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-      { '<C-p>', function() require'fzf-lua'.files() end, desc = 'Find Files' },
-      { '<Leader>gb', function() require'fzf-lua'.git_branches() end, desc = 'Git Branches' },
-      { '<Leader>gc', function() require'fzf-lua'.git_commits() end, desc = 'Git Commits' },
-      { '<Leader>gs', function() require'fzf-lua'.git_status() end, desc = 'Git Status' },
-      { '<Leader>gt', function() require'fzf-lua'.git_stash() end, desc = 'Git Stash' },
+      { '<C-p>',      function() require 'fzf-lua'.files() end,        desc = 'Find Files' },
+      { '<Leader>gb', function() require 'fzf-lua'.git_branches() end, desc = 'Git Branches' },
+      { '<Leader>gc', function() require 'fzf-lua'.git_commits() end,  desc = 'Git Commits' },
+      { '<Leader>gs', function() require 'fzf-lua'.git_status() end,   desc = 'Git Status' },
+      { '<Leader>gt', function() require 'fzf-lua'.git_stash() end,    desc = 'Git Stash' },
+      { '<Leader>se', function() require 'fzf-lua'.live_grep() end,    desc = 'Simple search' },
+      { '<Leader>se', function() require 'fzf-lua'.grep_visual() end,  desc = 'Simple search', mode = 'v', },
+      {
+        '<Leader>sc',
+        function()
+          require 'fzf-lua'.grep({
+            no_esc = true,
+            search = [[(^|\s)]] .. [[(class|module)\s]] .. vim.fn.expand("<cword>") .. [[($|\s)]],
+          })
+        end,
+        desc = 'Search Ruby class or module definition'
+      },
+      {
+        '<Leader>sc',
+        function()
+          require 'fzf-lua'.grep({
+            no_esc = true,
+            search = [[(^|\s)]] .. [[(class|module)\s]] .. require 'fzf-lua.utils'.get_visual_selection() .. [[($|\s)]],
+          })
+        end,
+        mode = 'v',
+        desc = 'Search Ruby class or module definition'
+      },
     },
     config = function()
       local actions = require "fzf-lua.actions"

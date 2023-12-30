@@ -5,13 +5,4 @@ M.DeleteGitBranch = function(selected)
   -- vim.cmd("echo 'hello'")
 end
 
-M.SearchRubyClassOrModule = function(keyword)
-  local fzf_lua = require 'fzf-lua'
-
-  fzf_lua.grep({
-    no_esc = true,
-    search = [[(^|\s)]] .. [[(class|module)\s]] .. keyword .. [[($|\s)]],
-    fzf_opts = {['--layout'] = 'default'}
-  })
-end
 return M
