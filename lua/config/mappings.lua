@@ -56,7 +56,7 @@ vim.api.nvim_set_keymap("n", "<Leader>gp", "<cmd>!git push<CR>", { desc = "Git p
 vim.api.nvim_set_keymap("n", "<Leader>gs", "<cmd>tab Git<CR>", { desc = "Git summary" })
 
 vim.api.nvim_set_keymap('n', "<Leader>j", '', {
-  callback = require 'treesj'.toggle,
+  callback = function() require 'treesj'.toggle() end,
   desc = "Toggle TreeSJ split and join",
 })
 
@@ -80,3 +80,4 @@ vim.keymap.set("n", "<leader>b", "0wcWbefore<ESC><cmd>:w<CR>")
 
 -- exit terminal mode when run test
 vim.keymap.set("t", "<C-o>", "<C-\\><C-n>")
+vim.api.nvim_set_keymap("n", "<Leader>z", "<cmd>MaximizerToggle<CR>", { desc = "Toggle maximizer" })
