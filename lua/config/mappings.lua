@@ -58,14 +58,13 @@ vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<CR>", { noremap = true, silent = 
 -- map Ctrl+Shift+j to decrease size of the window
 vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<Leader>gp", "<cmd>!git push<CR>", { desc = "Git push"})
-vim.api.nvim_set_keymap("n", "<Leader>gs", "<cmd>tab Git<CR>", { desc = "Git summary"})
+vim.api.nvim_set_keymap("n", "<Leader>gp", "<cmd>!git push<CR>", { desc = "Git push" })
+vim.api.nvim_set_keymap("n", "<Leader>gs", "<cmd>tab Git<CR>", { desc = "Git summary" })
 
---
--- TreeSJ
---
--- map leader+j to toggle split and join
-vim.keymap.set("n", "<Leader>j", "<cmd>lua require('treesj').toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', "<Leader>j", '', {
+  callback = require 'treesj'.toggle,
+  desc = "Toggle TreeSJ split and join",
+})
 
 
 --
