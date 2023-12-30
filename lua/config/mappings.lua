@@ -1,26 +1,3 @@
-local function map(desc, mode, lhs, rhs)
-  local opts = {}
-
-  if (opts.noremap == nil) then
-    opts.noremap = true
-  end
-
-  if (opts.silent == nil) then
-    opts.silent = true
-  end
-
-  opts.desc = desc
-  vim.keymap.set(mode, lhs, rhs, opts)
-end
-
-local function normalMap(opts)
-  map(opts.desc, "n", opts.keys, opts.action)
-end
-
-local function visualMap(opts)
-  map(opts.desc, "v", opts.keys, opts.action)
-end
-
 vim.g.mapleader = " "
 
 -- map leader+w to save current file in normal mode
@@ -102,36 +79,34 @@ vim.keymap.set("n", "<Leader>gc", "<cmd>lua require('fzf-lua').git_commits()<CR>
 -- Git push
 vim.keymap.set("n", "<Leader>gp", "<cmd>echo 'Pushing code...' | Git push<CR>", { noremap = true, silent = true })
 
-normalMap({
+vim.api.nvim_set_keymap('n', '<Leader>se', '', {
+  callback = function()
+    require 'fzf-lua'.live_grep({ fzf_opts = { ['--layout'] = 'default' } })
+  end,
+  noremap = true,
   desc = "Simple search",
-  keys = "<Leader>se",
-  action = function()
-    require('fzf-lua').live_grep({ fzf_opts = { ['--layout'] = 'default' } })
-  end
 })
 
-visualMap({
-  desc = "Simple search",
-  keys = "<Leader>se",
-  action = function()
-    require('fzf-lua').grep_visual({ fzf_opts = { ['--layout'] = 'default' } })
-  end
+vim.api.nvim_set_keymap('v', '<Leader>se', '', {
+  callback = function()
+    require 'fzf-lua'.grep_visual({ fzf_opts = { ['--layout'] = 'default' } })
+  end,
+  noremap = true,
+  desc = 'Simple search'
 })
 
-normalMap({
-  desc = "Search Ruby class or module definition",
-  keys = "<Leader>sc",
-  action = function()
+vim.api.nvim_set_keymap('n', '<Leader>sc', '', {
+  callback = function()
     require 'mm'.SearchRubyClassOrModule(vim.fn.expand("<cword>"))
-  end
+  end,
+  desc = 'Search Ruby class or module definition',
 })
 
-visualMap({
-  desc = "Search Ruby class or module definition",
-  keys = "<Leader>sc",
-  action = function()
+vim.api.nvim_set_keymap('v', '<Leader>sc', '', {
+  callback = function()
     require 'mm'.SearchRubyClassOrModule(require 'fzf-lua.utils'.get_visual_selection())
-  end
+  end,
+  desc = 'Search Ruby class or module definition',
 })
 
 --
