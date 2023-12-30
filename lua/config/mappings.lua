@@ -58,8 +58,7 @@ vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<CR>", { noremap = true, silent = 
 -- map Ctrl+Shift+j to decrease size of the window
 vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<CR>", { noremap = true, silent = true })
 
--- Git push
-vim.keymap.set("n", "<Leader>gp", "<cmd>echo 'Pushing code...' | Git push<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>gp", "<cmd>!git push<CR>", { desc = "Git push"})
 
 --
 -- TreeSJ
