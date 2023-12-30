@@ -103,14 +103,10 @@ vim.api.nvim_set_keymap('n', "<Leader>j", '', {
   desc = "Toggle TreeSJ split and join",
 })
 
-
---
--- Test
---
-vim.keymap.set("n", "<Leader>tt", "<cmd>TestNearest<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>ty", "<cmd>TestNearest -strategy=basic<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>tf", "<cmd>TestFile<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>tl", "<cmd>TestLast<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>tt", "<cmd>TestNearest<CR>", { desc = "Test Nearest" })
+vim.api.nvim_set_keymap("n", "<Leader>ty", "<cmd>TestNearest -strategy=basic<CR>", { desc = "Test Nearest with strategy basic" })
+vim.api.nvim_set_keymap("n", "<Leader>tf", "<cmd>TestFile<CR>", { desc = "Test File" })
+vim.api.nvim_set_keymap("n", "<Leader>tl", "<cmd>TestLast<CR>", { desc = "Test Last" })
 
 -- map leader+lr to restart lsp
 vim.keymap.set("n", "<Leader>lr", "<cmd>LspRestart<CR>:echo 'Lsp reloaded!'<CR>", { noremap = true, silent = true })
