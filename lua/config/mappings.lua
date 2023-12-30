@@ -41,7 +41,7 @@ vim.keymap.set("n", "<Leader>tt", "<cmd>TestNearest<CR>", { desc = "Test Nearest
 vim.keymap.set("n", "<Leader>ty", "<cmd>TestNearest -strategy=basic<CR>", { desc = "Test Nearest with strategy basic" })
 vim.keymap.set("n", "<Leader>tf", "<cmd>TestFile<CR>", { desc = "Test File" })
 vim.keymap.set("n", "<Leader>tl", "<cmd>TestLast<CR>", { desc = "Test Last" })
-vim.keymap.set("n", "<leader>te", "0wdf:wxa= <esc>wdwf}x", { desc = 'Transform let! to variable'})
+vim.keymap.set("n", "<leader>tv", "0wdf:wxa= <esc>wdwf}x", { desc = 'Transform let! to variable'})
 vim.keymap.set("n", "<leader>tr", "0df{<esc>f}x^==", { desc = 'Remove header of let!'})
 vim.keymap.set('n', '<Leader>tb', "0wcWbefore<ESC><cmd>:w<CR>", { desc = 'Transform let! to before' })
 
