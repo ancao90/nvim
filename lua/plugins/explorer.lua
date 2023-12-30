@@ -8,11 +8,6 @@ return {
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
-    lazy = true,
-    keys = { 
-      { '<Leader>nf', '<cmd>Neotree toggle reveal<CR>', 'n', { noremap = true, silent = true} },
-      { '<Leader>nc', '<cmd>Neotree close<CR>', 'n', { noremap = true, silent = true} }
-    },
     config = function()
       require("neo-tree").setup({
         filesystem = {

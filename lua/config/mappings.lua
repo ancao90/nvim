@@ -81,3 +81,4 @@ vim.keymap.set("n", "<leader>b", "0wcWbefore<ESC><cmd>:w<CR>")
 -- exit terminal mode when run test
 vim.keymap.set("t", "<C-o>", "<C-\\><C-n>")
 vim.api.nvim_set_keymap("n", "<Leader>z", "<cmd>MaximizerToggle<CR>", { desc = "Toggle maximizer" })
+vim.api.nvim_set_keymap("n", "<Leader>nf", "<cmd>Neotree toggle reveal<CR>", { desc = "Toggle neotree with revealing" })
