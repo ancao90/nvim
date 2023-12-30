@@ -58,24 +58,6 @@ vim.keymap.set("n", "<C-S-k>", "<cmd>resize +2<CR>", { noremap = true, silent = 
 -- map Ctrl+Shift+j to decrease size of the window
 vim.keymap.set("n", "<C-S-j>", "<cmd>resize -2<CR>", { noremap = true, silent = true })
 
-
---
--- Fzf
---
-
--- map Ctrl+P to find files
-vim.keymap.set("n", "<C-P>", "<cmd>lua require('fzf-lua').files({ fzf_opts = {['--layout'] = 'default'} })<CR>",
-  { noremap = true, silent = true })
-
--- Find git branches
-vim.keymap.set("n", "<Leader>gb", "<cmd>lua require('fzf-lua').git_branches()<CR>", { noremap = true, silent = true })
--- Find git stashes
-vim.keymap.set("n", "<Leader>gs", "<cmd>lua require('fzf-lua').git_stash()<CR>", { noremap = true, silent = true })
--- View git status
-vim.keymap.set("n", "<Leader>gt", "<cmd>lua require('fzf-lua').git_status()<CR>", { noremap = true, silent = true })
--- View git commits
-vim.keymap.set("n", "<Leader>gc", "<cmd>lua require('fzf-lua').git_commits()<CR>", { noremap = true, silent = true })
-
 -- Git push
 vim.keymap.set("n", "<Leader>gp", "<cmd>echo 'Pushing code...' | Git push<CR>", { noremap = true, silent = true })
 
