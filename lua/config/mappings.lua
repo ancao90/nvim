@@ -52,8 +52,51 @@ vim.keymap.set('n', '<Leader>f', function()
   vim.lsp.buf.format { async = true }
 end, { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n', '<C-p>', '', {
+  callback = function() require 'fzf-lua'.files() end,
+  desc = "Find files"
+})
+vim.api.nvim_set_keymap("n", "<Leader>gb", '', {
+  callback = function() require 'fzf-lua'.git_branches() end,
+  desc = "Git branches"
+})
+vim.api.nvim_set_keymap("n", "<Leader>gc", '', {
+  callback = function() require 'fzf-lua'.git_commits() end,
+  desc = "Git commits"
+})
+vim.api.nvim_set_keymap("n", "<Leader>gt", '', {
+  callback = function() require 'fzf-lua'.git_stash() end,
+  desc = "Git stash"
+})
 vim.api.nvim_set_keymap("n", "<Leader>gp", "<cmd>!git push<CR>", { desc = "Git push" })
 vim.api.nvim_set_keymap("n", "<Leader>gs", "<cmd>tab Git<CR>", { desc = "Git summary" })
+
+vim.api.nvim_set_keymap("n", "<Leader>se", '', {
+  callback = function() require 'fzf-lua'.live_grep() end,
+  desc = "Simple search"
+})
+vim.api.nvim_set_keymap('v', '<Leader>se', '', {
+  callback = function() require 'fzf-lua'.grep_visual() end,
+  desc = 'Simple search'
+})
+vim.api.nvim_set_keymap('n', '<Leader>sc', '', {
+  callback = function()
+    require 'fzf-lua'.grep({
+      no_esc = true,
+      search = [[(^|\s)]] .. [[(class|module)\s]] .. vim.fn.expand("<cword>") .. [[($|\s)]],
+    })
+  end,
+  desc = 'Search Ruby class or module definition'
+})
+vim.api.nvim_set_keymap('v', '<Leader>sc', '', {
+  callback = function()
+    require 'fzf-lua'.grep({
+      no_esc = true,
+      search = [[(^|\s)]] .. [[(class|module)\s]] .. require 'fzf-lua.utils'.get_visual_selection() .. [[($|\s)]],
+    })
+  end,
+  desc = 'Search Ruby class or module definition'
+})
 
 vim.api.nvim_set_keymap('n', "<Leader>j", '', {
   callback = function() require 'treesj'.toggle() end,
