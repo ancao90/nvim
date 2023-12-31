@@ -4,7 +4,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { 'nvim-telescope/telescope.nvim', tag = '0.1.5', dependencies = { 'nvim-lua/plenary.nvim' }}
+    { 'nvim-telescope/telescope.nvim',       tag = '0.1.5', dependencies = { 'nvim-lua/plenary.nvim' } }
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -12,7 +12,7 @@ return {
 
     local keymap = vim.keymap
     local opts = { noremap = true, silent = true }
-    local on_attach = function(client, bufnr)
+    local on_attach = function(_, bufnr)
       opts.buffer = bufnr
 
       -- set keybinds
@@ -34,17 +34,12 @@ return {
       settings = {
         Lua = {
           diagnostics = {
-            globals = { "vim" },
+            enable = false
           },
-          workspace = {
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. "/lua"] = true,
-            }
-          }
         }
       }
     })
+
     -- lspconfig["ruby_ls"].setup({
     --   capabilities = capabilities,
     --   on_attach = on_attach,
