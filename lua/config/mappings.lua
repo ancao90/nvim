@@ -53,3 +53,7 @@ vim.keymap.set('n', '<Leader>f', function() vim.lsp.buf.format { async = true } 
 vim.keymap.set('n', '<Leader>h', '<cmd>noh<CR>', { desc = 'Hide search highlight' })
 vim.keymap.set('n', '<Leader>w', ':HopWord<CR>', { desc = 'Enter HopWord mode'})
 vim.keymap.set({ "n", "v" }, "<Leader>y", '"+y', { desc = 'Copy to system clipboard'})
+vim.keymap.set("n", "<C-f>", function ()
+  local alternative_path = require 'mm'.alternate(vim.fn.expand("%"))
+  vim.cmd("vsplit "..alternative_path)
+end, { desc = 'Copy to system clipboard'})
