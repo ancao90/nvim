@@ -16,13 +16,8 @@ return {
       opts.buffer = bufnr
 
       -- set keybinds
-      opts.desc = "Go to declar"
-      keymap.set("n", "gR", ":Telescope lsp_references<CR>", opts)
-      keymap.set("n", "gd", ":Telescope lsp_definitions<CR>", opts)
-      keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
       keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
       keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-      keymap.set("n", "K", vim.lsp.buf.hover, opts)
       keymap.set("n", "<Leader>rs", ":LspRestart<CR>", opts)
     end
 
@@ -40,10 +35,6 @@ return {
       }
     })
 
-    -- lspconfig["ruby_ls"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach,
-    -- })
     lspconfig["rubocop"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
