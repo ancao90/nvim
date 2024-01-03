@@ -47,6 +47,9 @@ return {
     lspconfig["rubocop"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      init_options = {
+        safeAutocorrect =  false
+      }
     })
   end
 }
