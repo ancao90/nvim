@@ -41,14 +41,14 @@ M.alternate = function(path, cword)
 end
 
 M.CommitIncrementally = function()
-  local output = vim.api.nvim_exec2("!git log -n 1 --format=\"\\%s\"", { output = true})
-  local msg = vim.split(output.output, "\n")
-  if (msg[3] == "wip") then
-    print("Already wip. Commit ammend")
-    vim.api.nvim_exec2("!git add . && git commit --amend --no-edit", {})
+  local output = vim.api.nvim_exec2('!git log -n 1 --format=\"\\%s\"', { output = true })
+  local msg = vim.split(output.output, '\n')
+  if (msg[3] == 'wip') then
+    print('Already wip. Commit ammend')
+    vim.api.nvim_exec2('!git add . && git commit --amend --no-edit', {})
   else
-    print("No wip found. Create wip commit")
-    vim.api.nvim_exec2("!git add . && git commit -m wip", {})
+    print('No wip found. Create wip commit')
+    vim.api.nvim_exec2('!git add . && git commit -m wip', {})
   end
 end
 
