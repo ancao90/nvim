@@ -19,7 +19,17 @@ M.alternate = function(path, cword)
           if mailer == nil then
             local _, _, spec_mailer = string.find(path, 'spec/mailers/([%a_/]+)_spec.rb')
             if spec_mailer == nil then
-              return nil
+              local _, _, service = string.find(path, 'app/services/([%a_/]+).rb')
+              if service == nil then
+                local _, _, service_spec = string.find(path, 'spec/services/([%a_/]+)_spec.rb')
+                if service_spec == nil then
+                  return nil
+                else
+                  return 'app/services/' .. service_spec .. '.rb'
+                end
+              else
+                return 'spec/services/' .. service .. '_spec.rb'
+              end
             else
               return 'app/mailers/' .. spec_mailer .. '.rb'
             end

@@ -23,7 +23,7 @@ describe('mm', function()
     context('when the given path is not supported', function()
       it('returns nil', function()
         assert.are.same(
-          mm.alternate('app/services/user.rb'),
+          mm.alternate('app/unsupported/user.rb'),
           nil
         )
       end)
@@ -52,6 +52,24 @@ describe('mm', function()
         assert.are.same(
           mm.alternate('app/mailers/users/alert_mailer.rb'),
           'spec/mailers/users/alert_mailer_spec.rb'
+        )
+      end)
+    end)
+
+    context('when the given path is a service path', function()
+      it('returns alternative path', function()
+        assert.are.same(
+          mm.alternate('app/services/some_service.rb'),
+          'spec/services/some_service_spec.rb'
+        )
+      end)
+    end)
+
+    context('when the given path is a nested service path', function()
+      it('returns alternative path', function()
+        assert.are.same(
+          mm.alternate('app/services/nested/some_service.rb'),
+          'spec/services/nested/some_service_spec.rb'
         )
       end)
     end)
@@ -88,6 +106,24 @@ describe('mm', function()
         assert.are.same(
           mm.alternate('spec/mailers/users/alert_mailer_spec.rb'),
           'app/mailers/users/alert_mailer.rb'
+        )
+      end)
+    end)
+
+    context('with spec service path', function()
+      it('returns service path', function()
+        assert.are.same(
+          mm.alternate('spec/services/some_service_spec.rb'),
+          'app/services/some_service.rb'
+        )
+      end)
+    end)
+
+    context('with nested spec service path', function()
+      it('returns nested service path', function()
+        assert.are.same(
+          mm.alternate('spec/services/nested/some_service_spec.rb'),
+          'app/services/nested/some_service.rb'
         )
       end)
     end)
