@@ -15,7 +15,17 @@ M.alternate = function(path, cword)
       if controller == nil then
         local _, _, model = string.find(path, 'spec/models/([%a_]+)_spec.rb')
         if model == nil then
-          return nil
+          local _, _, mailer = string.find(path, 'app/mailers/([%a_/]+).rb')
+          if mailer == nil then
+            local _, _, spec_mailer = string.find(path, 'spec/mailers/([%a_/]+)_spec.rb')
+            if spec_mailer == nil then
+              return nil
+            else
+              return 'app/mailers/' .. spec_mailer .. '.rb'
+            end
+          else
+            return 'spec/mailers/' .. mailer .. '_spec.rb'
+          end
         else
           return 'app/models/' .. model .. '.rb'
         end

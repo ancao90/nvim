@@ -38,6 +38,24 @@ describe('mm', function()
       end)
     end)
 
+    context('when the given path is a mailer path', function()
+      it('returns alternative path', function()
+        assert.are.same(
+          mm.alternate('app/mailers/application_mailer.rb'),
+          'spec/mailers/application_mailer_spec.rb'
+        )
+      end)
+    end)
+
+    context('when the given path is a nested mailer path', function()
+      it('returns alternative path', function()
+        assert.are.same(
+          mm.alternate('app/mailers/users/alert_mailer.rb'),
+          'spec/mailers/users/alert_mailer_spec.rb'
+        )
+      end)
+    end)
+
     context('with spec request path', function()
       it('returns controller path', function()
         assert.are.same(
@@ -52,6 +70,24 @@ describe('mm', function()
         assert.are.same(
           mm.alternate('spec/models/user_spec.rb'),
           'app/models/user.rb'
+        )
+      end)
+    end)
+
+    context('with spec mailer path', function()
+      it('returns mailer path', function()
+        assert.are.same(
+          mm.alternate('spec/mailers/application_mailer_spec.rb'),
+          'app/mailers/application_mailer.rb'
+        )
+      end)
+    end)
+
+    context('with nested spec mailer path', function()
+      it('returns nested mailer path', function()
+        assert.are.same(
+          mm.alternate('spec/mailers/users/alert_mailer_spec.rb'),
+          'app/mailers/users/alert_mailer.rb'
         )
       end)
     end)
