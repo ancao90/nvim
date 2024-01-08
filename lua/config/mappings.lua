@@ -45,7 +45,7 @@ vim.keymap.set('n', '<Leader>ty', '<cmd>TestNearest -strategy=basic<CR>', { desc
 vim.keymap.set('n', '<Leader>tf', '<cmd>TestFile<CR>', { desc = 'Test File' })
 vim.keymap.set('n', '<Leader>tl', '<cmd>TestLast<CR>', { desc = 'Test Last' })
 vim.keymap.set('n', '<leader>tv', '0wdf:wxa= <esc>wdwf}x', { desc = 'Transform let! to variable' })
-vim.keymap.set('n', '<leader>tr', '0df{<esc>f}x^==', { desc = 'Remove header of let!' })
+vim.keymap.set('n', '<leader>tr', '@="0df{<C-V><ESC>f}x^==j"<CR>', { desc = 'Remove header of let!' })
 vim.keymap.set('n', '<Leader>tb', '0wcWbefore<ESC><cmd>:w<CR>', { desc = 'Transform let! to before' })
 
 vim.keymap.set('n', '<Leader>z', '<cmd>MaximizerToggle<CR>', { desc = 'Toggle maximizer' })
