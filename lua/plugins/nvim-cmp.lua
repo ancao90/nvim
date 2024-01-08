@@ -13,7 +13,7 @@ return {
 
     local luasnip = require("luasnip")
     luasnip.add_snippets("gitcommit", {
-      luasnip.snippet("fixRSpecLetSetup", { luasnip.text_node("Fix rubocop offenses RSpec/LetSetup in ") })
+      luasnip.snippet("fixRSpecLetSetup", { luasnip.text_node("refactor: fix rubocop offenses RSpec/LetSetup in ") })
     })
     luasnip.add_snippets("gitcommit", {
       luasnip.snippet("fixRSpecLeakyConstantDeclaration", { luasnip.text_node("Fix rubocop offenses RSpec/LeakyConstantDeclaration in ") })
